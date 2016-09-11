@@ -9,8 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +33,8 @@ public class result extends AppCompatActivity {
 
     int cfresult,ctresult,count,i;
 
+    Button admin;
+
     RecyclerView rv1;
 
     List<adapterdata> adapterdatas=new ArrayList<adapterdata>();
@@ -40,7 +45,7 @@ public class result extends AppCompatActivity {
         {
             mydb=this.openOrCreateDatabase(tablename,MODE_PRIVATE,null);  //database chalu hai ..................*****************
 
-            mydb.execSQL("CREATE TABLE IF NOT EXISTS "+tablename+" (Route_no NUMBER,Stop_1 VARCHAR2, Stop_1_Time VARCHAR2,Stop_2 VARCHAR2, Stop_2_Time VARCHAR2);");
+            mydb.execSQL("CREATE TABLE IF NOT EXISTS "+tablename+" (Stop_1 VARCHAR2, Stop_1_Time VARCHAR2,Stop_2 VARCHAR2, Stop_2_Time VARCHAR2);");
 
 
         }
@@ -58,7 +63,7 @@ public class result extends AppCompatActivity {
 
             adapterdata adapterdata11;
 
-            Cursor cursor=mydb.rawQuery("SELECT Stop_1,Stop_1_Time,Stop_2,Stop_2_Time FROM "+tablename+" WHERE Stop_1="+fromResult+" AND Stop_2="+toResult,null);
+            Cursor cursor=mydb.rawQuery("SELECT Stop_1,Stop_1_Time,Stop_2,Stop_2_Time FROM "+tablename+" WHERE Stop_1=='"+fromResult+"' AND Stop_2=='"+toResult+"'",null);
 
             cfresult=cursor.getColumnIndex("Stop_1_Time");
 
@@ -68,7 +73,7 @@ public class result extends AppCompatActivity {
 
             cursor.moveToFirst();
 
-            for (i=1;i<=count;i++)
+            for (i=0;i<=count;i++)
             {
                 fresult=cursor.getString(cfresult);
 
@@ -82,13 +87,22 @@ public class result extends AppCompatActivity {
 
                 adapterdatas.add(adapterdata11);
 
+                cursor.moveToNext();
+
+                Toast.makeText(result.this,"1",Toast.LENGTH_LONG).show();
+
             }
+
+            cursor.close();
+
         }
         catch (Exception e)
         {
             Log.e("ERROR SEARCH","DB",e);
         }
         finally {
+
+
             mydb.close();
         }
     }
@@ -103,6 +117,8 @@ public class result extends AppCompatActivity {
 
         fromResult=i2.getStringExtra("From");
         toResult=i2.getStringExtra("To");
+
+        admin=(Button)findViewById(R.id.admin);
 
 
 
@@ -128,8 +144,19 @@ public class result extends AppCompatActivity {
         rv1.setAdapter(adaptercycle);
 
 
-    //****************************************************************************visit here *********************
+    //****************************************************************************visit here *******************
+        //**
 
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent ii=new Intent(result.this,datainsert.class);
+
+                startActivity(ii);
+
+            }
+        });
 
 
 

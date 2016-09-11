@@ -19,7 +19,7 @@ public class adapterrecycle extends RecyclerView.Adapter<adapterrecycle.ViewHold
 
     public adapterrecycle(List<adapterdata> adapterdatas)
     {
-        this.bustime=adapterdatas;
+        bustime=adapterdatas;
     }
 
 
@@ -40,24 +40,28 @@ public class adapterrecycle extends RecyclerView.Adapter<adapterrecycle.ViewHold
 
         holder.tv1.setText(adapterdata12.getFromadapter());
 
+        holder.tv2.setText(adapterdata12.getToadapter());
+
 
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return bustime.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tv1;
+        TextView tv1,tv2;
 
         public ViewHolder(View v)
         {
             super(v);
 
             tv1=(TextView)v.findViewById(R.id.cardtimingtv1);
+
+            tv2=(TextView)v.findViewById(R.id.cardtimingtv2);
         }
 
     }

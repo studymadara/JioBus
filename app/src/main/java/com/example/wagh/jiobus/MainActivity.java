@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     String fromMain,toMain;
 
-    String[] stops={"Rabale","TC-23","Stop A","Stop B","Stop C","Stop D","Stop E"};
+    String[] stops={"Rabale","TC-23","Stop_A","Stop_B","Stop_C","Stop_D","Stop_E"};
 
 
     @Override

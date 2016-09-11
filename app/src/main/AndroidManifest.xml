@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".result"/>
+        <activity android:name=".datainsert"/>
     </application>
 
 </manifest>
