@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.wagh.jiobus.MainActivity">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jio Bus Service"
+        android:textSize="25sp"
+        android:id="@+id/tv1"
+        android:gravity="center_horizontal"/>
+
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:textSize="25sp"
+        android:id="@+id/tv2"
+        android:gravity="center_horizontal"/>
+
+
+
+    <View android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="#000000"/>
+
+
+    <!--
+    <TableLayout
+        android:id="@+id/tl1"
+        android:layout_alignBottom="@id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+
+        <TableRow
+            >
+
+            <TextView
+               android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+               android:text="Bus From"/>
+
+            <TextView
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:text="Bus To"/>
+
+
+
+            <TextView
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:text="Bus Timing"/>
+
+
+        </TableRow>
+
+
+        <View android:layout_height="1dp"
+            android:layout_width="1dp"
+            android:background="#000000"/>
+
+
+        <TableRow>
+
+            <TextView
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:text="Station"/>
+
+            <TextView
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:text="TC-23"/>
+
+
+            <TextView
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:text="8.00 AM"/>
+
+
+        </TableRow>
+
+
+        <TableRow>
+
+            <TextView
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:text="TC-23"/>
+
+            <TextView
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:text="Station"/>
+
+
+            <TextView
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:text="9.00 PM"/>
+
+
+        </TableRow>
+
+
+
+
+    </TableLayout>
+-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:textSize="20dp"/>
+
+
+    <AutoCompleteTextView
+        android:id="@+id/actvfrom"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:textSize="20dp"/>
+
+
+    <AutoCompleteTextView
+        android:id="@+id/actvto"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test"/>
+
+
+
+
+    <View android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="#000000"/>
+
+    <Button
+        android:id="@+id/find"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Find"/>
+
+
+</LinearLayout>
+
+    </ScrollView>
